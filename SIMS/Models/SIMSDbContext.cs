@@ -33,6 +33,16 @@ namespace SIMS.Models
             optionsBuilder.UseSqlServer("Server=DESKTOP-UQHR23R;Database=SIMS;User Id=sa;Password=123;TrustServerCertificate=True");
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Enrollment>()
+                .HasOne(e => e.Student)
+                .WithMany(s => s.Enrollments)
+                .OnDelete(DeleteBehavior.Cascade);  // Enable Cascade Delete
+        }
+
 
     }
 

@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SIMS.Models;
 
@@ -15,18 +15,15 @@ namespace SIMS.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
+            var roleId = HttpContext.Session.GetInt32("RoleID");
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+            if (roleId == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            ViewBag.RoleID = roleId;
+            return View();
         }
     }
 }

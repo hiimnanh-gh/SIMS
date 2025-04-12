@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc;
+using System.Data.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace SIMS.Models;
@@ -38,4 +41,9 @@ public partial class Student
     [ForeignKey("UserId")]
     [InverseProperty("Student")]
     public virtual User User { get; set; } = null!;
+
+
+    
+
+
 }

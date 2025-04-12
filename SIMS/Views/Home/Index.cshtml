@@ -1,8 +1,34 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var roleId = ViewBag.RoleID as int?;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Chào mừng đến hệ thống SIMS</h2>
+
+@if (roleId == 1)  // Admin
+{
+    <div style="color: red;">
+        <h3>Giao diện cho Admin</h3>
+        <p>Quản lý người dùng, báo cáo hệ thống, v.v...</p>
+    </div>
+}
+else if (roleId == 2) // Student
+{
+    <div style="color: green;">
+        <h3>Giao diện cho Sinh viên</h3>
+        <p>Xem điểm, đăng ký môn học, v.v...</p>
+    </div>
+}
+else if (roleId == 3) // Teacher
+{
+    <div style="color: blue;">
+        <h3>Giao diện cho Giáo viên</h3>
+        <p>Quản lý lớp học, nhập điểm, v.v...</p>
+    </div>
+}
+else
+{
+    <div>
+        <p>Không xác định quyền truy cập.</p>
+    </div>
+}

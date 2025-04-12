@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SIMS.Models.Student>
+
+@{
+    ViewData["Title"] = "Student Management";
+}
+
+<h2>Student Management</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Major</th>
+            <th>Class</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentId</td> <!-- Display StudentId -->
+                <td>@student.User.Name</td> <!-- Access related User's Name -->
+                <td>@student.User.Email</td> <!-- Access related User's Email -->
+                <td>@student.User.PhoneNumber</td> <!-- Access related User's Phone -->
+                <td>@student.User.Address</td> <!-- Access related User's Address -->
+                <td>@student.Major.MajorName</td> <!-- Access related Major's name -->
+                <td>@student.Class?.ClassName</td> <!-- Access related Class's name (null-safe) -->
+                <td>
+                    <a href="@Url.Action("Details", "StudentManagement", new { id = student.StudentId })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Edit", "StudentManagement", new { id = student.StudentId })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", "StudentManagement", new { id = student.StudentId })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "StudentManagement")" class="btn btn-success">Create New Student</a>

@@ -5670,11 +5670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\daong\\source\\repos\\SIMS\\SIMS\\SIMS.csproj",
+      "projectUniqueName": "C:\\Users\\daong\\source\\repos\\sims\\sims\\SIMS.csproj",
       "projectName": "SIMS",
-      "projectPath": "C:\\Users\\daong\\source\\repos\\SIMS\\SIMS\\SIMS.csproj",
+      "projectPath": "C:\\Users\\daong\\source\\repos\\sims\\sims\\SIMS.csproj",
       "packagesPath": "C:\\Users\\daong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\daong\\source\\repos\\SIMS\\SIMS\\obj\\",
+      "outputPath": "C:\\Users\\daong\\source\\repos\\sims\\sims\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

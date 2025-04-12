@@ -1,0 +1,15 @@
+﻿@model SIMS.Models.Student
+
+<h2>Are you sure you want to delete this student?</h2>
+
+<div>
+    <h3>@Model.User.Name</h3>
+    <p>Student ID: @Model.StudentId</p>
+    <p>Email: @Model.User.Email</p>
+</div>
+
+<form method="post">
+    <!-- Phương thức POST -->
+    <input type="hidden" name="id" value="@Model.StudentId" />
+    <button type="submit">Delete</button>
+</form>
